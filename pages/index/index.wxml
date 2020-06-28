@@ -1,0 +1,32 @@
+<!--index.wxml-->
+<view class="main" >
+<!-- <view style="background: url({{background}}) center center no-repeat; width:100%; height:100%; background-size: cover; top:50px; justify-content: center;"> -->
+<view>
+  <view class="header"></view>
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" style='top: 50px'> 获取头像昵称 </button>
+    <block wx:else>
+      <view class="userinfo-avator-wrap">
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      </view>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="usermotto">
+    <text class="masked" style="text_align: center">欢迎来到答题页面</text>
+    <text class="masked2" style="text_align: center">（{{user_type}}）</text>
+    <button data-num="1" class='loginbtn1'  bindtap="menuClick1" >1.开始考试</button>
+    <!-- <navigator data-num="3" class="navigator none  {{_num==1?'none':''}} {{_num==2?'block':''}} {{_num==3?'none':''}} {{_num==4?'none':''}} {{_num==5?'none':''}}" bindtap="menuClick3"  url="../../packageA/pages/python3/python" hover-class="navigator-hover">{{enter}}</navigator>
+    <navigator data-num="4" class="navigator none  {{_num==1?'none':''}} {{_num==2?'none':''}} {{_num==3?'block':''}} {{_num==4?'none':''}} {{_num==5?'none':''}}" bindtap="menuClick4"  url="../../packageA/pages/python4/python" hover-class="navigator-hover">{{enter}}</navigator>
+    <navigator data-num="5" class="navigator none  {{_num==1?'none':''}} {{_num==2?'none':''}} {{_num==3?'none':''}} {{_num==4?'block':''}} {{_num==5?'none':''}}" bindtap="menuClick5"  url="../../packageA/pages/python5/python" hover-class="navigator-hover">{{enter}}</navigator> -->
+    <button data-num="2" class='loginbtn1'  bindtap="menuClick2" >2.套题学习</button>
+    <!-- <button data-num="3" class='loginbtn1'  bindtap="menuClick3" >错题集</button>
+    <button data-num="4" class='loginbtn1'  bindtap="menuClick4" >收藏夹</button> -->
+    
+    
+<!--   <navigator style = "color: #CDB03B;" url="../../packageA/pages/prc_all/prc_all" hover-class="navigator-hover">自我测试</navigator>-->
+<navigator class='loginbtn2' url="../../packageA/pages/wrong_set/wrong_set" hover-class="navigator-hover">3.错题集合</navigator>
+<navigator class='loginbtn3' style = "color: #CDB03B;font-size: 18px;" url="../../packageA/pages/collection/collection" hover-class="navigator-hover">4.收藏题目</navigator> 
+  </view>
+</view>
+</view>

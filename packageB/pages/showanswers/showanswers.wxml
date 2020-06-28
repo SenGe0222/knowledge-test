@@ -1,0 +1,45 @@
+<!--packageB/pages/showanswers/showanswers.wxml-->
+<view class="chengji">本次考试成绩为{{suc}}({{suc}}/{{suc + wro}})分！</view>
+
+<view wx:for="{{res_answers.allList}}" wx:for-item="item" wx:key="index">
+    
+    <view class="header">
+    <view class="xuanz">{{index+1}}/{{res_answers.length}}{{item.type}}</view>  
+          {{item.q}}
+    </view>
+    <view wx:if="{{item.type == '单选'}}" >
+    <!-- 单选 -->
+    <block wx:for="{{item.options}}" wx:for-item="subItem" wx:key="index">
+      <view class="list" data-option="{{[subItem,index,idx]}}" bindtap="tapRadio">
+        <view class="number">
+         </view>{{subItem.label}}. {{subItem.text}}
+      </view>
+    </block>
+    </view>
+    <view wx:else>
+    <!-- 多选 -->
+    <block wx:for="{{item.options}}" wx:for-item="subItem" wx:key="index">
+      <view class="list {{subItem.class}}" data-option="{{[subItem,index,idx]}}" bindtap="tapCheckbox">
+        <view class="number">
+         </view>
+           {{subItem.label}}. {{subItem.text}}
+        </view>
+    </block>
+    </view>
+   
+    
+   <view wx:if="{{item.isAnswer == '0'}}" class="noans">
+      题目未作答
+      <view >正确答案：{{item.a}}</view>
+   </view>
+   <view wx:elif="{{item.isAnswer == '1'}}" class="sucans">
+      题目作答正确
+      <view >正确答案：{{item.a}}</view>
+   </view>
+   <view wx:else="{{item.isAnswer == '2'}}" class="wroans">
+      题目作答错误
+      <view >正确答案：{{item.a}}</view>
+   </view>
+
+  </view>
+

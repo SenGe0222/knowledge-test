@@ -1,0 +1,59 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/select/select",
+    "pages/index/index",
+    "pages/my/my"
+  ],
+  "subpackages": [
+    {
+      "root": "packageA",
+      "pages": [
+        "pages/logs/logs",
+        "pages/python/python",
+        "pages/python2/python",
+        "pages/python3/python",
+        "pages/python4/python",
+        "pages/python5/python",
+        "pages/collection/collection",
+        "pages/wrong_set/wrong_set",
+        "pages/prc_all/prc_all",
+        "pages/prc_all_2/prc_all_2",
+        "pages/prc_all_3/prc_all_3",
+        "pages/prc_all_4/prc_all_4",
+        "pages/prc_all_5/prc_all_5"
+      ]
+    },
+    {
+      "root": "packageB",
+      "pages": [
+        "pages/showanswers/showanswers"
+      ]
+    }
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#2db7f5",
+    "navigationBarTitleText": "安规普考答题库",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "selectedColor": "#2db7f5",
+    "color": "#909090",
+    "list": [
+      {
+        "text": "答题",
+        "iconPath": "images/answer.png",
+        "selectedIconPath": "images/answer-select.png",
+        "pagePath": "pages/select/select"
+      },
+      {
+        "text": "我的",
+        "iconPath": "images/my.png",
+        "selectedIconPath": "images/my-select.png",
+        "pagePath": "pages/my/my"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}
